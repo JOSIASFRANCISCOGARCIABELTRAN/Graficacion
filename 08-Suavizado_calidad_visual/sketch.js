@@ -1,15 +1,16 @@
-let posiciones=[];
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 200);
 }
 
 function draw() {
   background(240);
-  for (let i=0; i<posiciones.length; i++){
-    circle(posiciones[i].x, posiciones[i].y,30);
-  }
+  //Con suavizado
+  smooth();
+  strokeWeight(8);
+  line(50, 150, 150, 50);
+
+  //Sin suavizado
+  noSmooth();
+  line(250, 150, 350, 50);
 }
 
-function mousePressed(){
-  posiciones.push({x: mouseX, y: mouseY});
-}
