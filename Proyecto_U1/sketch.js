@@ -7,14 +7,14 @@ let btn;
 function setup() {
   createCanvas(800, 500);
 
-  // botón
+  //boton
   btn = createButton("Cambiar Día/Noche");
   btn.position(10, 10);
   btn.mousePressed(() => {
     night = !night;
   });
 
-  // estrellas
+  //estrellas
   for (let i = 0; i < 100; i++) {
     stars.push({
       x: random(width),
@@ -47,13 +47,13 @@ function draw() {
   waveOffset += 0.05;
 }
 
-// 🌍 SUELO
+//SUELO
 function drawGround() {
   fill(50, 180, 75);
   rect(0, height / 2, width, height / 2);
 }
 
-// 🌊 LAGO
+//LAGO
 function drawLake() {
   fill(0, 100, 200);
   ellipse(200, 380, 200, 100);
@@ -71,22 +71,22 @@ function drawLake() {
   noStroke();
 }
 
-// 🏠 CASA (CON VENTANAS Y CHIMENEA)
+//CASA
 function drawHouse() {
 
-  // base
+  //base
   fill(200, 100, 50);
   rect(350, 300, 120, 100);
 
-  // techo
+  //techo
   fill(150, 50, 50);
   triangle(350, 300, 470, 300, 410, 250);
 
-  // puerta
+  //puerta
   fill(100, 50, 0);
   rect(395, 350, 30, 50);
 
-  // 🪟 ventanas
+  //ventanas
   fill(173, 216, 230);
   rect(360, 320, 25, 25);
   rect(435, 320, 25, 25);
@@ -100,21 +100,21 @@ function drawHouse() {
   line(447, 320, 447, 345);
   noStroke();
 
-  // 🏭 chimenea
+  //Chimenea
   fill(120);
   rect(430, 250, 20, 40);
 }
 
-// 🌳 ÁRBOL (HOJAS CON MOUSE)
+//ARBOL (HOJAS CON MOUSE)
 function drawTree() {
   let x = 650;
   let y = 350;
 
-  // tronco
+  //tronco
   fill(101, 67, 33);
   rect(x - 10, y, 20, 80);
 
-  // movimiento según mouse
+  //movimiento según mouse
   let sway = map(mouseX, 0, width, -20, 20);
 
   fill(34, 139, 34);
@@ -123,19 +123,19 @@ function drawTree() {
   ellipse(x + 20 + sway, y - 10, 60, 60);
 }
 
-// ☀️ SOL
+//SOL
 function drawSun() {
   fill(255, 204, 0);
   ellipse(700, 80, 80);
 }
 
-// 🌙 LUNA
+//LUNA
 function drawMoon() {
   fill(230);
   ellipse(700, 80, 60);
 }
 
-// ☁️ NUBES
+//NUBES
 function drawClouds() {
   let x = cloudX % (width + 300) - 150;
 
@@ -151,7 +151,7 @@ function drawCloud(x, y) {
   ellipse(x + 30, y + 10, 65);
 }
 
-// ⭐ ESTRELLAS
+//ESTRELLAS
 function drawStars() {
   fill(255);
   for (let s of stars) {
@@ -159,7 +159,7 @@ function drawStars() {
   }
 }
 
-// 🕒 RELOJ
+//RELOJ
 function drawClock() {
   let cx = 100;
   let cy = 100;
@@ -186,7 +186,7 @@ function drawClock() {
   strokeWeight(1);
 }
 
-// 📝 TEXTO
+//TEXTO
 function drawText() {
   fill(0);
   textSize(14);
