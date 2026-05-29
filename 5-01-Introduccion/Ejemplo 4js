@@ -1,0 +1,10 @@
+function setup() { 
+    createCanvas(400, 300); 
+} 
+
+function draw() { 
+    background(220); 
+    let t = millis() / 1000; 
+    let x = 200 + sin(t) * 100; 
+    circle(x, 150, 50); 
+}
